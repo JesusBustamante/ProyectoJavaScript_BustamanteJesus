@@ -89,6 +89,7 @@ while (bool === true) {
             let password = parseInt(prompt("Ingrese su contraseña (ID)\n"));
             console.log("");
 
+            let found = false
             for (let i of academico) {
                 for (let x of i.estudiantes) {
                     if (x.nombres === usuario) {
@@ -112,9 +113,10 @@ while (bool === true) {
                             console.log("Fecha de finalización: ", x.finalizacion);
 
                             pregunta = prompt("\nPresione cualquier tecla para cerrar sesión\n");
-                            if (pregunta !== "jaja") {
+                            if (pregunta !== "si") {
+                                bool = false
                                 break
-                            }
+                            };
 
                             break
                         }
