@@ -236,7 +236,7 @@ while bool==True:
 
                         if respuestaUsuario == 2:
                             
-                            system("cls")
+                            system("cls") 
 
                             print("------------------------------------------------")   
                             print("                INGRESAR NOTAS                  ")
