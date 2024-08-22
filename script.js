@@ -540,15 +540,81 @@ while (bool === true) {
                                                         let PorcentajeMenor = parseInt(prompt("Nota teórica 30% :\n"));
 
                                                         if (100 >= PorcentajeMayor && PorcentajeMenor >= 1) {
-                                                            let resultado = ((PorcentajeMayor * 0.7) + (PorcentajeMenor * 0.30));
+                                                            var resultado = ((PorcentajeMayor * 0.7) + (PorcentajeMenor * 0.30));
 
                                                             if (resultado >= 60) {
+
+                                                                let academico = [
+
+                                                                    {
+                                                                        "salon": "Sputnik",
+                                                                        "estudiantes": [
+                                                                            {
+                                                                                "identificacion": 4024674357,
+                                                                                "nombres": "Cristina",
+                                                                                "apellidos": "Aguilera Moron",
+                                                                                "direccion": "Calle 9 #10-210",
+                                                                                "acudiente": "Ramon Aguilera Torrado",
+                                                                                "nfijo": "601 5787492",
+                                                                                "celular": "313 575 78 25",
+                                                                                "estado": "Cursando",
+                                                                                "trainer": "Pedro",
+                                                                                "ruta": "Java",
+                                                                                "inicio": "19-02-2024",
+                                                                                "finalizacion": "14-04-2025",
+                                                                                "EstadoPlataforma": "inactivo"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "salon": "Apolo",
+                                                                        "estudiantes": [
+                                                                            {
+                                                                                "identificacion": 6536787532,
+                                                                                "nombres": "Diego Leon",
+                                                                                "apellidos": "Santana Conedo",
+                                                                                "direccion": "Calle 11 #24-253",
+                                                                                "acudiente": "Carlos Santana Guerrero",
+                                                                                "nfijo": "601 5423546",
+                                                                                "celular": "302 575 45 66",
+                                                                                "estado": "Cursando",
+                                                                                "trainer": "Stiven",
+                                                                                "ruta": "NodeJS",
+                                                                                "inicio": "19-02-2024",
+                                                                                "finalizacion": "14-04-2024",
+                                                                                "EstadoPlataforma": "inactivo"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "salon": "Artemis",
+                                                                        "estudiantes": [
+                                                                            {
+                                                                                "identificacion": 56571854534,
+                                                                                "nombres": "Moly Alejandra",
+                                                                                "apellidos": "Castillo Arellano",
+                                                                                "direccion": "Urbanizacion La Esmeralda",
+                                                                                "acudiente": "Cristina Arellano Casas",
+                                                                                "nfijo": "601 8255272",
+                                                                                "celular": "313 527 35 52",
+                                                                                "estado": "Cursando",
+                                                                                "trainer": "Andres",
+                                                                                "ruta": "NetCore",
+                                                                                "inicio": "19-02-2024",
+                                                                                "finalizacion": "14-04-2025",
+                                                                                "EstadoPlataforma": "inactivo"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                
+                                                                ]
+
                                                                 console.log("");
-                                                                x.estado = "si";
+                                                                x.estado = "Si aprobó";
                                                                 aprobado.push(x);
                                                                 console.log("");
                                                                 console.log(x.nombres, x.apellidos);
-                                                                console.log("si");
+                                                                console.log("Si aprobó");
                                                                 console.log("");
 
                                                                 var salon = parseInt(prompt("Elija el área de entrenamiento del alumno\n\n1.Sputnik\n2.Apolo\n3.Artemis\n\n"));
@@ -571,12 +637,29 @@ while (bool === true) {
                                                                 };
                                                             
                                                             } else {
+
+                                                                let desaprobado = [
+                                                                    {
+                                                                        "identificacion": 5354764778,
+                                                                        "nombres": "Abraham David",
+                                                                        "apellidos": "Porchella Arismendi",
+                                                                        "direccion": "Calle 42 #7-454",
+                                                                        "acudiente": "Cristian Porchella Torres",
+                                                                        "nfijo": "601 5645576",
+                                                                        "celular": "313 567 45 79",
+                                                                        "estado": [
+                                                                            59.0,
+                                                                            "Desaprobado"
+                                                                        ]
+                                                                    }
+                                                                ]
+
                                                                 console.log("");
-                                                                x.estado = "no";
+                                                                x.estado = "No aprobó";
                                                                 desaprobado.push(x);
                                                                 console.log("");
                                                                 console.log(x.nombres, x.apellidos);
-                                                                console.log("no");
+                                                                console.log("No aprobó");
                                                                 bool = false;
                                                             }
                                                         } else {
@@ -586,9 +669,9 @@ while (bool === true) {
 
                                                         for (let item of inscritos) {
                                                             if (resultado >= 60) {
-                                                                item.estado = "si";
+                                                                item.estado = "Si aprobó";
                                                             } else {
-                                                                item.estado = "no";
+                                                                item.estado = "No aprobó";
                                                             }
                                                         }
 
@@ -670,7 +753,7 @@ while (bool === true) {
                                     let contador = 1;
                                     for (let i of academico) {
                                         if (i.salon == seleccion) {
-                                            let estudiantes = i.estudiantes;
+                                            var estudiantes = i.estudiantes
                                             break;
                                         }
                                     }
@@ -716,30 +799,86 @@ while (bool === true) {
                                                         
                                                     let PorcentajeMenor = parseInt(prompt("Nota teórica 30% :\n"));
                                                         
-                                                    rl.question("Nota de Trabajos 10% :\n", (diez) => {
-                                                        diez = parseInt(diez);
+                                                    let diez = parseInt(prompt("Nota de Trabajos 10% :\n"));
 
-                                                        if (100 >= PorcentajeMayor && PorcentajeMenor >= 1) {
-                                                            let resultado = ((PorcentajeMayor * 0.6) + (PorcentajeMenor * 0.30) + (diez * 0.1));
-                                                            notas += resultado;
+                                                    if (100 >= PorcentajeMayor && PorcentajeMenor >= 1) {
+                                                        let resultado = ((PorcentajeMayor * 0.6) + (PorcentajeMenor * 0.30) + (diez * 0.1));
+                                                        notas += resultado;
 
-                                                            if (resultado >= 60) {
-                                                                console.log("");
-                                                                i.modulos[`Modulo ${modulo}`] = (`[${resultado}] [{"Modulo aprobado"}]`);
-                                                                console.log("Modulo Aprobado\n");
-                                                            } else {
-                                                                console.log("");
-                                                                i.modulos[`Modulo ${modulo}`] = (`[${resultado}] [{"Modulo desaprobado"}]`);
-                                                                console.log("Modulo Desaprobado\n");
-                                                            }
+                                                        if (resultado >= 60) {
+                                                            console.log("");
+                                                            i.modulos[`Modulo ${modulo}`] = (`[${resultado}] [{"Modulo aprobado"}]`);
+                                                            console.log("Modulo Aprobado\n");
                                                         } else {
-                                                            console.log("La nota supera el límite ");
-                                                            console.log("Ingrese las notas nuevamente");
+                                                            console.log("");
+                                                            i.modulos[`Modulo ${modulo}`] = (`[${resultado}] [{"Modulo desaprobado"}]`);
+                                                            console.log("Modulo Desaprobado\n");
                                                         }
-                                                    });
-                                                    
-                                                    
+                                                    } else {
+                                                        console.log("La nota supera el límite ");
+                                                        console.log("Ingrese las notas nuevamente");
+                                                    }   
                                                 }
+
+                                                let notamodulo = [
+                                                    {
+                                                        "identificacion": 4024674357,
+                                                        "nombres": "Cristina",
+                                                        "apellidos": "Aguilera Moron",
+                                                        "direccion": "Calle 9 #10-210",
+                                                        "acudiente": "Ramon Aguilera Torrado",
+                                                        "nfijo": "601 5787492",
+                                                        "celular": "313 575 78 25",
+                                                        "estado": "Cursando",
+                                                        "trainer": "Pedro",
+                                                        "ruta": "Java",
+                                                        "inicio": "19-02-2024",
+                                                        "finalizacion": "14-04-2025",
+                                                        "modulos": {
+                                                            "Modulo 1": "[90.0] [Modulo aprobado]",
+                                                            "Modulo 2": "[90.0] [Modulo aprobado]",
+                                                            "Modulo 3": "[90.0] [Modulo aprobado]",
+                                                            "Modulo 4": "[90.0] [Modulo aprobado]",
+                                                            "Modulo 5": "[90.0] [Modulo aprobado]"
+                                                        },
+                                                        "promedio": 90.0
+                                                    },
+                                                    {
+                                                        "identificacion": 6536787532,
+                                                        "nombres": "Diego Leon",
+                                                        "apellidos": "Santana Conedo",
+                                                        "direccion": "Calle 11 #24-253",
+                                                        "acudiente": "Carlos Santana Guerrero",
+                                                        "nfijo": "601 5423546",
+                                                        "celular": "302 575 45 66",
+                                                        "estado": "Cursando",
+                                                        "trainer": "Stiven",
+                                                        "ruta": "NodeJS",
+                                                        "inicio": "19-02-2024",
+                                                        "finalizacion": "14-04-2024",
+                                                        "modulos": {
+                                                            "Modulo 1": "[24.0] [Modulo desaprobado]",
+                                                            "Modulo 2": "[90.0] [Modulo aprobado]",
+                                                            "Modulo 3": "[10.0] [Modulo desaprobado]",
+                                                            "Modulo 4": "[10.0] [Modulo desaprobado]",
+                                                            "Modulo 5": "[10.0] [Modulo desaprobado]"
+                                                        },
+                                                        "promedio": 28.8
+                                                    }
+                                                ]
+
+                                                var notaP = [
+                                                    {
+                                                        "Riesgo": "Riesgo Alto",
+                                                        "Notas": [
+                                                            {
+                                                                "Nombre": "Diego Leon",
+                                                                "Apellido": "Santana Conedo",
+                                                                "Promedio": 28.8
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
 
                                                 notamodulo.push(i);
                                                 let promedio = notas / 5;
@@ -759,28 +898,16 @@ while (bool === true) {
 
                                                     notaP.push(riesgo);
 
-                                                    fs.writeFileSync("promedioNotas.json", JSON.stringify(notaP, null, 4));
                                                 }
-
-                                                fs.writeFileSync("notamodulo.json", JSON.stringify(notamodulo, null, 4));
                                             }
                                         }
                                     }
-                                    
-                                    
-                                    
                                 }
-                                
-                            }
-                            
+                            } 
                         }
                     }
                 }
             }
-             
-       
-
-
         }
     }
 }
